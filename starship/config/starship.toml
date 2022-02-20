@@ -1,0 +1,113 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+
+format = """\
+[        ╭╴](208)$env_var\
+   $all[ ╰──契](208)$character"""
+
+
+#🌩️🌱⎇ ❯ ⎇ ⚡ 者  🔐   聯 🛡  _  🔌
+#                           
+
+[character]
+success_symbol = "[   ](73)"
+error_symbol = "[✗](90)"
+
+
+[git_branch]
+symbol = "שׂ "
+format = " on branch:[$symbol$branch]($style) "
+truncation_length = 4
+truncation_symbol = "…/"
+style = '3'
+
+[username]
+style_user = "8"
+style_root = "black bold"
+format = "[$user]($style) "
+disabled = false  # disable in powershell
+show_always = true
+
+[directory]
+style = '11'
+truncation_length = 5
+truncation_symbol = " …/"
+# fish_style_pwd_dir_length=2
+home_symbol = "  ~"
+read_only_style = "160"
+read_only = " 廬"
+format = "[$read_only]($read_only_style)[$path]($style)"
+use_logical_path=true
+
+[directory.substitutions]
+"F"=" ﱲ ~"
+
+[shell]
+fish_indicator = ""
+powershell_indicator = "⚡"
+unknown_indicator = "mystery shell"
+style = "red bold"
+disabled = true
+
+[python]
+symbol = " "
+python_binary = "python3"
+style='2'
+format='[ (\($virtualenv\))]($style) via [$symbol$version]($style)'
+
+[custom.tztime]
+# command = 'date +"%Z %A%a %b%B %d %m%Y %l:%M%p"'
+command = 'date +"%m-%d-%y %l:%M%P"'
+when = "true"
+style="8"
+format = '[  $symbol( \[$output)\]]($style)'
+symbol = ""
+
+# [custom.F]
+# command = "echo foo" # shows output of command
+# # #files = ["foo"] # can specify filters but wildcards are not supported
+# # when = "$HOME == $PWD"
+# # when = """'F:' == '$PWD' """
+# when="true"
+# style='8'
+# symbol="🌴$output🌴"
+# format = "[$symbol]($style)transcending"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💦"
+format="[$symbol$percentage]($style) "
+disabled=false
+
+[[battery.display]] # RED 0-15%
+threshold = 15
+style = "160"
+discharging_symbol = "💀 "
+
+[[battery.display]] # RED 15-30%
+threshold = 30
+style = "160"
+discharging_symbol = "  "
+
+[[battery.display]] # ORANGE 30-55%
+threshold = 55
+style = "208"
+discharging_symbol='  '
+
+[[battery.display]] # gray 55-75%
+threshold = 75
+style = "109"
+discharging_symbol='  '
+
+[[battery.display]] # bright green 75-99%
+threshold = 99
+style = "76"
+discharging_symbol='💦 '
+
+[[battery.display]] # bright green 99-100%
+threshold = 100
+style = "76"
+discharging_symbol='💦'
+
