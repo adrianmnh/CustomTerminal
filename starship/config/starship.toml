@@ -76,38 +76,38 @@ symbol = ""
 
 [battery]
 full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💦"
+charging_symbol = " ⚡️"
+discharging_symbol = " 💦"
 format="[$symbol$percentage]($style) "
 disabled=false
 
 [[battery.display]] # RED 0-15%
 threshold = 15
 style = "160"
-discharging_symbol = "💀 "
+discharging_symbol = " 💀 "
 
 [[battery.display]] # RED 15-30%
 threshold = 30
 style = "160"
-discharging_symbol = "  "
+discharging_symbol = "   "
 
 [[battery.display]] # ORANGE 30-55%
 threshold = 55
 style = "208"
-discharging_symbol='  '
+discharging_symbol='   '
 
 [[battery.display]] # gray 55-75%
 threshold = 75
 style = "109"
-discharging_symbol='  '
+discharging_symbol='   '
 
-[[battery.display]] # bright green 75-99%
-threshold = 99
+[[battery.display]] # bright green 75-98%
+threshold = 98
 style = "76"
-discharging_symbol='💦 '
+discharging_symbol='   '
 
 [[battery.display]] # bright green 99-100%
-threshold = 100
+threshold = 101
 style = "76"
-discharging_symbol='💦'
+discharging_symbol=' 💦'
 
