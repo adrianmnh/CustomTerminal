@@ -3,8 +3,8 @@ add_newline = true
 
 
 format = """\
-[        ╭╴](208)$env_var\
-   $all[ ╰──契](208)$character"""
+[         ╭╴](208)$env_var\
+    $all[ ╰──契](208)$character"""
 
 
 #🌩️🌱⎇ ❯ ⎇ ⚡ 者  🔐   聯 🛡  _  🔌
@@ -75,13 +75,18 @@ symbol = ""
 # format = "[$symbol]($style)transcending"
 
 [battery]
-full_symbol = "🔋"
+full_symbol = "  🔋"
 charging_symbol = " ⚡️"
-discharging_symbol = " 💦"
+discharging_symbol = " 💦 "
 format="[$symbol$percentage]($style) "
 disabled=false
 
-[[battery.display]] # RED 0-15%
+[[battery.display]] # RED 0-9%
+threshold = 10
+style = "160"
+discharging_symbol = "  💀 "
+
+[[battery.display]] # RED 10-15%
 threshold = 15
 style = "160"
 discharging_symbol = " 💀 "
@@ -102,12 +107,13 @@ style = "109"
 discharging_symbol='   '
 
 [[battery.display]] # bright green 75-98%
-threshold = 98
+threshold = 100
 style = "76"
-discharging_symbol='   '
+discharging_symbol='  💦'
 
 [[battery.display]] # bright green 99-100%
 threshold = 101
 style = "76"
 discharging_symbol=' 💦'
-
+full_symbol = " 🔋"
+charging_symbol = " ⚡️"
