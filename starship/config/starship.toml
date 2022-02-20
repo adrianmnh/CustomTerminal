@@ -17,10 +17,27 @@ error_symbol = "[✗](90)"
 
 [git_branch]
 symbol = "שׂ "
-format = " on branch:[$symbol$branch]($style) "
-truncation_length = 4
-truncation_symbol = "…/"
+format = " ➥[$remote_name](202)[ $symbol$branch](3) "
 style = '3'
+#truncation_length = 4
+truncation_symbol = "…/"
+only_attached = false
+always_show_remote = true
+
+[git_status]
+# conflicted = "⚔️{$count}"
+# ahead = "🏎️💨×${count}"
+# behind = "🐢×${count}"
+# diverged = "🔱🏎️💨×${ahead_count} 🐢×${behind_count}"
+# untracked = "🛤️×${count}"
+# stashed = "📦"
+# modified = "📝×${count}"
+# staged = "🗃️×${count}"
+# renamed = "📛×${count}"
+# deleted = "🗑️×${count}"
+# style = "bright-white"
+# format = "$all_status$ahead_behind"
+disabled=false
 
 [username]
 style_user = "8"
@@ -61,7 +78,7 @@ format='[ (\($virtualenv\))]($style) via [$symbol$version]($style)'
 command = 'date +"%m-%d-%y %l:%M%P"'
 when = "true"
 style="8"
-format = '[  $symbol( \[$output)\]]($style)'
+format = '[ $symbol( \[$output)\]]($style)'
 symbol = ""
 
 # [custom.F]
