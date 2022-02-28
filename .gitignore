@@ -1,2 +1,3 @@
 #ignore logs
 /starship/log/*
+.tmp*

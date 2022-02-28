@@ -3,8 +3,8 @@ add_newline = true
 
 
 format = """\
-[  ╭─ ](208)$shell$username$directory$python$git_branch
-[  ╰╮ oberon ](208) $git_status$custom$battery $all\
+[  ╭─ ](208)$shell[oberon ](8)$directory$python$git_branch $custom$battery
+[  ╰╮](208)$git_status $all\
 [   ╰───契](208)$character($style)"""
 
 
@@ -18,12 +18,17 @@ error_symbol = "[✗](90)"
 
 [git_branch]
 symbol = "שׂ "
-format = " ➥[$remote_name](202)[ $symbol$branch](3) "
+format = " [樓$remote_name](202)[ $symbol$branch](3) "
 style = '3'
 truncation_length = 15
 truncation_symbol = "…/"
 only_attached = false
 always_show_remote = true
+
+[cmd_duration]
+format="[\\(took $duration\\)]($style)"
+style='11'
+min_time = 1
 
 [git_status]
 # conflicted = "⚔️{$count}"
@@ -36,23 +41,23 @@ always_show_remote = true
 # staged = "🗃️×${count}"
 # renamed = "📛×${count}"
 # deleted = "🗑️×${count}"
-# style = "bright-white"
-# format = "$all_status$ahead_behind"
+style = "9"
+format = "[ [github 例](9)adrianmnh\\[$all_status$ahead_behind\\]]($style)"
 disabled=false
 
 [username]
 style_user = "8"
 style_root = "black bold"
 format = "[$user]($style) "
-disabled = false  # disable in powershell
+disabled = true  # disable in powershell
 show_always = true
 
 [directory]
 style = '11'
-truncation_length = 50
-truncation_symbol = "~/"
+truncation_length = 1
+truncation_symbol = "../~"
 # fish_style_pwd_dir_length=2
-home_symbol = "  "
+home_symbol = " "
 read_only_style = "160"
 read_only = " 廬"
 format = "[$read_only]($read_only_style)[$path]($style)"
@@ -60,13 +65,12 @@ format = "[$read_only]($read_only_style)[$path]($style)"
 [directory.substitutions]
 "F:"=" ﱲ "
 
-
-
 [shell]
+style='8'
 fish_indicator = ""
 powershell_indicator = "⚡"
 unknown_indicator = "shell"
-format='[$indicator](9)'
+format='[$indicator]($style)'
 disabled = false
 
 [python]

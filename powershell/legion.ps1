@@ -13,9 +13,16 @@ function colormap {
 }
 
 function ~ {
-    cd C:\Users\nlawl\"My Drive"
+    cd C:\Users\nlawl\Drive
 }
 
+function cd381 {
+	cd C:\Users\nlawl\Drive\22Spring\381-AdvancedProgrammingC++
+}
 
+function build($name){
+	$exe = ($name).replace("cpp", "exe")
+	g++ $name -o $exe
+}
 
 Invoke-Expression (starship init powershell)
