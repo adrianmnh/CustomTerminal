@@ -18,9 +18,9 @@ error_symbol = "[✗](90)"
 
 [git_branch]
 symbol = "שׂ "
-format = " [樓$remote_name](202)[ $symbol$branch](3) "
+format = " [樓$remote_name](202)[$symbol$branch](3) "
 style = '3'
-truncation_length = 15
+truncation_length = 100
 truncation_symbol = "…/"
 only_attached = false
 always_show_remote = true
